@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreeStock Finder | Universal CCO Search</title>
+    <title>Cretazo | Find Copyright‑Free Images in One Place</title>
+    <meta name="monetag" content="a2cf5f3c6d4f5cdd2402f713f5cf277a">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -44,7 +45,7 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 30px;
             font-weight: 800;
             margin: 0 0 10px 0;
             letter-spacing: -1.5px;
@@ -79,32 +80,11 @@
             font-family: inherit;
             font-weight: 400;
             border-radius: 0;
+            -webkit-appearance: none; /* Mobile consistency */
         }
 
         #search-input:focus {
             border-color: var(--accent);
-        }
-
-        
-        /* Footer Styling */
-        footer {
-            background-color: #fff;
-            border-top: 1px solid #dee2e6;
-            padding: 20px 0;
-            font-size: 12px;
-            color: #6c757d;
-            text-align: center;
-        }
-
-        footer a {
-            color: #6c757d;
-            text-decoration: none;
-            margin: 0 12px;
-            transition: color 0.2s ease;
-        }
-
-        footer a:hover {
-            color: var(--primary-color);
         }
 
         .sites-container {
@@ -118,9 +98,9 @@
         .site-row {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start; /* Align to top for better multi-line look */
-            flex-wrap: wrap; /* Allow wrapping when URL gets long */
-            gap: 15px 0px; /* Vertical gap, horizontal handled by margin */
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 15px 0px;
             padding: 45px 0;
             border-bottom: 1px solid var(--border);
             text-decoration: none;
@@ -136,8 +116,8 @@
         .site-name {
             font-weight: 600;
             font-size: 20px;
-            white-space: nowrap; /* Prevent site name itself from wrapping */
-            margin-right: 30%; /* 30% margin between site name and url */
+            white-space: nowrap;
+            margin-right: 30%;
         }
 
         .site-url {
@@ -146,11 +126,10 @@
             text-align: right;
             word-break: break-all;
             font-weight: 500;
-            flex: 1 1 300px; /* Grow to fill space, but suggest wrapping if below 300px */
-            min-width: 0; /* Necessary for flex item text wrapping */
+            flex: 1 1 300px;
+            min-width: 0;
         }
 
-        /* Purpose Section */
         .info-section {
             max-width: 800px;
             width: 100%;
@@ -182,32 +161,11 @@
             margin: 0;
         }
 
-        .use-case-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0 0 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 20px;
-        }
-
-        .use-case-list li {
-            font-size: 0.85rem;
-            color: var(--muted);
-            font-weight: 500;
-        }
-
-        .use-case-list li::before {
-            content: "•";
-            color: var(--accent);
-            margin-right: 8px;
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 767.98px) {
             h1 { font-size: 1.8rem; }
             .site-row { flex-direction: column; align-items: flex-start; gap: 8px; padding: 30px 0; }
             .site-name { margin-right: 0; }
-            .site-url { text-align: left; margin-left: 0; flex: none; }
+            .site-url { text-align: left; margin-left: 0; flex: none; font-size: 18px; }
             .brand-name { margin-top: 20px; }
             .header-content { margin-top: 40px; }
             .info-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -216,7 +174,7 @@
 </head>
 <body>
 
-    <div class="brand-name">FreeStock Finder</div>
+    <div class="brand-name">CRETAZO</div>
 
     <div class="header-content">
         <h1>Find Copyright‑Free Images in One Place</h1>
@@ -224,12 +182,10 @@
     </div>
 
     <div class="search-wrapper">
-        <input type="text" id="search-input" placeholder="Type here to search" autocomplete="off">
+        <input type="text" id="search-input" placeholder="Type here to search" autocomplete="off" enterkeyhint="search">
     </div>
 
-    <div class="sites-container" id="sites-list">
-        <!-- JS will populate this -->
-    </div>
+    <div class="sites-container" id="sites-list"></div>
 
     <section class="info-section">
         <div class="info-grid">
@@ -242,57 +198,14 @@
                 <p>Type keyword and instantly get search links of copyright‑free (CC0) images sites.</p>
             </div>
         </div>
-
-        <div class="info-item">
-            <h2>Best For</h2>
-            <ul class="use-case-list">
-                <li>Creative Pros</li>
-                <li>Web Designers</li>
-                <li>Bloggers</li>
-                <li>Social Media</li>
-                <li>Commercial Projects</li>
-            </ul>
-        </div>
     </section>
-
-        <!-- Footer -->
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <a href="about.html">About Us</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="cookies.html">Cookies</a>
-        </div>
-    </footer>
-    
 
     <script>
         const ccoSites = [
-            {
-                name: "Pexels",
-                home: "https://www.pexels.com/",
-                searchPrefix: "https://www.pexels.com/search/",
-                searchSuffix: "/"
-            },
-            {
-                name: "Unsplash",
-                home: "https://unsplash.com/",
-                searchPrefix: "https://unsplash.com/s/photos/",
-                searchSuffix: ""
-            },
-            {
-                name: "Pixabay",
-                home: "https://pixabay.com/",
-                searchPrefix: "https://pixabay.com/images/search/",
-                searchSuffix: "/"
-            },
-            {
-                name: "StockSnap.io",
-                home: "https://stocksnap.io/",
-                searchPrefix: "https://stocksnap.io/search/",
-                searchSuffix: ""
-            }
+            { name: "Pexels", home: "https://www.pexels.com/", searchPrefix: "https://www.pexels.com/search/", searchSuffix: "/" },
+            { name: "Unsplash", home: "https://unsplash.com/", searchPrefix: "https://unsplash.com/s/photos/", searchSuffix: "" },
+            { name: "Pixabay", home: "https://pixabay.com/", searchPrefix: "https://pixabay.com/images/search/", searchSuffix: "/" },
+            { name: "StockSnap.io", home: "https://stocksnap.io/", searchPrefix: "https://stocksnap.io/search/", searchSuffix: "" }
         ];
 
         const searchInput = document.getElementById('search-input');
@@ -301,26 +214,27 @@
         function updateList() {
             const query = searchInput.value.trim();
             const encodedQuery = encodeURIComponent(query);
-            
             let html = '';
-            
             ccoSites.forEach(site => {
-                let finalUrl = query === "" 
-                    ? site.home 
-                    : `${site.searchPrefix}${encodedQuery}${site.searchSuffix}`;
-
-                html += `
-                    <a href="${finalUrl}" target="_blank" class="site-row">
-                        <span class="site-name">${site.name}</span>
-                        <span class="site-url">${finalUrl}</span>
-                    </a>
-                `;
+                let finalUrl = query === "" ? site.home : `${site.searchPrefix}${encodedQuery}${site.searchSuffix}`;
+                html += `<a href="${finalUrl}" target="_blank" class="site-row"><span class="site-name">${site.name}</span><span class="site-url">${finalUrl}</span></a>`;
             });
-
             sitesList.innerHTML = html;
         }
 
+        // Real-time update
         searchInput.addEventListener('input', updateList);
+
+        // Keyboard Dismiss for Mobile
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                // If the screen width is mobile (Bootstrap's breakpoint is < 768px)
+                if (window.innerWidth <= 767.98) {
+                    searchInput.blur();
+                }
+            }
+        });
+
         updateList();
     </script>
 </body>
