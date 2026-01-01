@@ -254,6 +254,17 @@
         .hidden {
             display: none !important;
         }
+
+
+        #main-image {
+            -webkit-user-drag: none;
+            user-drag: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
 
@@ -301,8 +312,8 @@
                         <div class="loader-text">Loading wallpaper...</div>
                     </div>
 
-                    <img id="main-image" src="" alt="Wallpaper Preview" class="preview-img"
-                        onerror="handleImageError()">
+                    <img id="main-image" oncontextmenu="return false;" src="" alt="Wallpaper Preview"
+                        class="preview-img" onerror="handleImageError()">
                 </div>
 
                 <!-- Right Side: Details (Desktop/Tablet) -->
